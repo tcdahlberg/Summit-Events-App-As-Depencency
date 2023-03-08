@@ -105,3 +105,5 @@ flows:
                 task: deploy_guest_sharing_rules
             8:
                 task: create_fake_school_data
+            9:
+                task: sea:load_sample_data
