@@ -29,19 +29,6 @@ tasks:
         options:
             required_org_code_coverage_percent: 75
 
-    add_new_templates_piciklist:
-        description: "Adds new templates created in this project."
-        class_path: cumulusci.tasks.metadata_etl.picklists.AddPicklistEntries
-        options:
-            picklists: summit__Summit_Events__c.summit__Template__c
-            entries:
-                - fullName: "summitEventsApp"
-                  label: "summitEventsApp"
-                - fullName: "highereddreamin"
-                  label: "highereddreamin"
-                - fullName: "stthomas2021"
-                  label: "stthomas2021"
-
     deploy_site_config:
         description: Deploys configuration for Development.
         class_path: cumulusci.tasks.salesforce.Deploy
@@ -107,16 +94,14 @@ flows:
     config_dev:
         steps:
             3:
-                task: add_new_templates_piciklist
-            4:
                 task: sea:deploy_permission_set
-            5:
+            4:
                 task: deploy_site_config
-            6:
+            5:
                 task: deploy_site_settings
-            7:
+            6:
                 task: deploy_guest_permission_set
-            8:
+            7:
                 task: deploy_guest_sharing_rules
-            9:
+            8:
                 task: create_fake_school_data
