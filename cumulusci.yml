@@ -12,8 +12,7 @@ project:
 sources:
     sea:
         github: 'https://github.com/SFDO-Community/Summit-Events-App'
-        branch: 'sea_as_dependency'
-
+        branch: 'master'
 tasks:
     robot:
         options:
@@ -43,7 +42,5 @@ flows:
                 task: sea:deploy_guest_permission_set
             7:
                 task: sea:deploy_namespaced_guest_sharing_rules
-            8:
-                task: sea:create_fake_school_data
             9:
                 task: sea:load_sample_data
